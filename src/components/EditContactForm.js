@@ -7,9 +7,9 @@ import Card from "./Card";
 const EditContactForm = ({ id, onUpdate, onClick, ...props }) => {
   const location = useLocation();
   const { from } = location.state;
-  const contactStyle = "border-2";
 
-  console.log("err", Formik);
+  // Add specific style to Card UI component
+  const contactStyle = "border-2";
 
   let navigate = useNavigate();
   return (
@@ -26,17 +26,11 @@ const EditContactForm = ({ id, onUpdate, onClick, ...props }) => {
         } else if (!values.name) {
           errors.name = "Required";
         }
-        // else if (!/^\d{10}$/.text(values.phone)) {
-        //   errors.phone = "Invalid phone number";
-        // }
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          // alert(JSON.stringify(values, null, 2));
-          // console.log("val", values);
           onUpdate(from[0], values.name, values.email, values.phone);
-          // setSubmitting(false);
         }, 400);
         navigate("/");
       }}

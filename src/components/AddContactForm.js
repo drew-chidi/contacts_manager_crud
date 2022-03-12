@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const AddContactForm = ({ onAdd, onClick }) => {
   let navigate = useNavigate();
+
+  // Add specific style to Card UI component
   const contactStyle = "border-2";
 
   return (
@@ -21,17 +23,11 @@ const AddContactForm = ({ onAdd, onClick }) => {
         } else if (!values.name) {
           errors.name = "Required";
         }
-        // else if (!/^\d{10}$/.text(values.phone)) {
-        //   errors.phone = "Invalid phone number";
-        // }
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          // alert(JSON.stringify(values, null, 2));
-          // console.log("val", values);
           onAdd(values.name, values.email, values.phone);
-          setSubmitting(false);
         }, 400);
         navigate("/");
       }}

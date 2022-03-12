@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 
 const ContactList = ({ id, email, name, onDelete, phone }) => {
-  // const [isLoading, setIsLoading] = useState(false)
   const deleteHandler = () => {
     onDelete(email);
   };
