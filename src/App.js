@@ -10,7 +10,7 @@ import Home from "./Home";
 const App = () => {
   const [users, setUsers] = useState([]);
   // const [visible, setVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -21,7 +21,7 @@ const App = () => {
   // };
 
   const fetchData = async () => {
-    setIsLoading(true);
+    // setIsLoading(true);
     try {
       const response = await axios.request({
         method: "GET",
@@ -31,7 +31,7 @@ const App = () => {
     } catch (error) {
       console.log(error);
     }
-    setIsLoading(false);
+    // setIsLoading(false);
   };
 
   const onUpdate = async (id, name, email, phone) => {
