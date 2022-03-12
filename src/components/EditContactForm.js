@@ -7,7 +7,7 @@ import Card from "./Card";
 const EditContactForm = ({ id, onUpdate, onClick, ...props }) => {
   const location = useLocation();
   const { from } = location.state;
-  const contactStyle = "w-[400px] border-2";
+  const contactStyle = "border-2";
 
   console.log("err", Formik);
 
@@ -80,7 +80,7 @@ const EditContactForm = ({ id, onUpdate, onClick, ...props }) => {
             <button
               type='submit'
               disabled={isSubmitting}
-              className='bg-blue-700 text-white w-12 my-2 rounded-md'
+              className='bg-blue-700 text-white w-20 my-2 rounded-md'
             >
               Update
             </button>

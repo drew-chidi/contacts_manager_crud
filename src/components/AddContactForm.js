@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const AddContactForm = ({ onAdd, onClick }) => {
   let navigate = useNavigate();
-  const contactStyle = "w-[400px] border-2";
+  const contactStyle = "border-2";
 
   return (
     <Formik
