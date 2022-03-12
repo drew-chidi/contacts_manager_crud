@@ -72,17 +72,18 @@ const App = () => {
 
   return (
     <Card>
-      <div className='flex justify-between border-b-[1.5px] border-gray-400 px-2 sm:w-4/5 mx-auto py-2'>
-        <Link to='/' className='text-lg font-bold '>
-          Contacts
+      <header className='flex justify-between border-b-[1.5px] border-gray-400 px-2 sm:w-4/5 mx-auto py-2'>
+        <Link to='/'>
+          <button className='text-lg font-bold hover:text-gray-500'>
+            Contacts
+          </button>
         </Link>
-        <Link
-          to='/add'
-          className='bg-blue-700 text-white w-10 text-center rounded-md'
-        >
-          Add
+        <Link to='/add'>
+          <button className='bg-blue-700 text-white w-10 text-center rounded-md hover:bg-blue-400'>
+            Add
+          </button>
         </Link>
-      </div>
+      </header>
       <div>
         <Routes>
           <Route

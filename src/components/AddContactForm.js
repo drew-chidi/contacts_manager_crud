@@ -3,7 +3,7 @@ import Card from "./Card";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const AddContactForm = ({ onAdd, onClick }) => {
+const AddContactForm = ({ onAdd }) => {
   let navigate = useNavigate();
 
   // Add specific style to Card UI component
@@ -25,7 +25,7 @@ const AddContactForm = ({ onAdd, onClick }) => {
         }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values) => {
         setTimeout(() => {
           onAdd(values.name, values.email, values.phone);
         }, 400);
@@ -42,7 +42,11 @@ const AddContactForm = ({ onAdd, onClick }) => {
                 name='name'
                 className='bg-transparent border-[1.5px] border-gray-400 rounded-md px-1 focus:border-blue-700 outline-none placeholder:text-xs'
               />
-              <ErrorMessage name='name' component='div' />
+              <ErrorMessage
+                name='name'
+                component='div'
+                className='text-xs text-red-500'
+              />
             </div>
             <div className='flex flex-col'>
               <Field
@@ -66,12 +70,11 @@ const AddContactForm = ({ onAdd, onClick }) => {
                 id='phone'
                 className='bg-transparent border-[1.5px] border-gray-400 rounded-md px-1 focus:border-blue-700 outline-none placeholder:text-xs'
               />
-              <ErrorMessage name='phone' component='div' />
             </div>
             <button
               type='submit'
               disabled={isSubmitting}
-              className='bg-blue-700 text-white w-12 my-2 rounded-md'
+              className='bg-blue-700 text-white w-12 my-2 rounded-md hover:bg-blue-400'
             >
               Add
             </button>
